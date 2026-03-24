@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambuur = Kampvuur</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #003399; /* Cambuur Blue */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #ffcc00; /* Cambuur Yellow */
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            animation: flicker 2s infinite alternate;
+        }
+
+        .campfire-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .log {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 100px;
+            height: 20px;
+            background-color: #5d4037;
+            border-radius: 10px;
+            transform: translateX(-50%) rotate(-10deg);
+        }
+
+        .log:nth-child(2) {
+            transform: translateX(-50%) rotate(10deg);
+            bottom: 5px;
+        }
+
+        .flame {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #ff6d00;
+            border-radius: 50% 0 50% 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            animation: burn 0.5s infinite alternate;
+            box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff6d00;
+        }
+
+        .flame-inner {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: #ffcc00;
+            border-radius: 50% 0 50% 50%;
+            transform: translateX(-50%) rotate(0deg);
+        }
+
+        @keyframes burn {
+            0% { transform: translateX(-50%) rotate(-45deg) scale(1); }
+            100% { transform: translateX(-50%) rotate(-45deg) scale(1.1); }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; text-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
+        }
+
+        .spark {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            animation: rise 2s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% { bottom: 20px; opacity: 1; transform: translateX(0); }
+            100% { bottom: 150px; opacity: 0; transform: translateX(20px); }
+        }
+
+        /* Generate sparks */
+        .spark:nth-of-type(1) { left: 40%; animation-delay: 0.2s; }
+        .spark:nth-of-type(2) { left: 60%; animation-delay: 0.5s; }
+        .spark:nth-of-type(3) { left: 50%; animation-delay: 1s; }
+        .spark:nth-of-type(4) { left: 45%; animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+    <h1>Cambuur = Kampvuur</h1>
+
+    <div class="campfire-container">
+        <div class="log"></div>
+        <div class="log"></div>
+        <div class="flame">
+            <div class="flame-inner"></div>
+        </div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <a href="https://www.flashscore.com/team/cambuur/6u4mVMzh/" target="_blank" style="background-color: #ffcc00; color: #003399; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase;">View Live Scores</a>
+    </div>
+</body>
+</html>
