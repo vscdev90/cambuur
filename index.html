@@ -14,8 +14,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-x: hidden;
             color: #ffcc00; /* Cambuur Yellow */
         }
 
@@ -24,6 +24,7 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             margin-bottom: 50px;
+            text-align: center;
             text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
             animation: flicker 2s infinite alternate;
         }
@@ -103,6 +104,58 @@
         .spark:nth-of-type(2) { left: 60%; animation-delay: 0.5s; }
         .spark:nth-of-type(3) { left: 50%; animation-delay: 1s; }
         .spark:nth-of-type(4) { left: 45%; animation-delay: 1.5s; }
+
+        .scores-link-container {
+            margin-top: 50px;
+        }
+
+        .scores-link {
+            background-color: #ffcc00;
+            color: #003399;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            .campfire-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .log {
+                width: 80px;
+            }
+
+            .flame {
+                width: 60px;
+                height: 60px;
+            }
+
+            .flame-inner {
+                width: 35px;
+                height: 35px;
+            }
+
+            .scores-link-container {
+                margin-top: 30px;
+            }
+
+            .scores-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -120,8 +173,11 @@
         <div class="spark"></div>
     </div>
 
-    <div style="margin-top: 50px;">
-        <a href="https://www.flashscore.com/team/cambuur/6u4mVMzh/" target="_blank" style="background-color: #ffcc00; color: #003399; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase;">View Live Scores</a>
+    <div class="scores-link-container">
+        <a href="https://www.flashscore.com/team/cambuur/6u4mVMzh/" target="_blank" class="scores-link">View Live Scores</a>
     </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

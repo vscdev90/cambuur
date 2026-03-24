@@ -86,3 +86,44 @@ body {
   color: #555;
   font-size: 1.5rem;
 }
+
+@media (max-width: 600px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .app-container {
+    gap: 1rem;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .match-card {
+    min-width: unset;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .teams {
+    font-size: 1.1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .score {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+  }
+
+  .mood-indicator {
+    font-size: 1.4rem;
+  }
+
+  .emoji {
+    font-size: 3rem;
+  }
+}
